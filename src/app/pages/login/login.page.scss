@@ -3,17 +3,16 @@ ion-content {
   height: 100%;
 }
 
-small{
+small {
   color: #12a19a;
-  margin:0px 0px 30px 30px;
-  font: normal normal  16px Montserrat;
-
+  margin: 0px 0px 30px 30px;
+  font: normal normal 16px Montserrat;
 }
 
 .linkCreCuenta {
   cursor: pointer;
   text-align: center;
-  font-family: normal normal bold 22px Montserrat;
+  font: normal normal bold 22px Montserrat;
   color: #12a19a;
   opacity: 1;
 }
@@ -66,5 +65,3 @@ footer {
 
   text-align: center;
 }
-
-

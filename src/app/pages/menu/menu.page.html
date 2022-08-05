@@ -1,7 +1,7 @@
 <ion-split-pane contentId="main">
   <ion-menu contentId="main" side="start">
       <ion-header>
-          <ion-toolbar color="success">
+          <ion-toolbar color="tertiary">
               <ion-title>Menu</ion-title>
               <ion-buttons>
                   <ion-button slot="start" (click)="closeMenu()">
@@ -16,13 +16,13 @@
       <ion-content>
           <ion-list>
               <ion-item>
-                  <ion-icon name="home" color="success" slot="start"></ion-icon>
+                  <ion-icon name="home" color="tertiary" slot="start"></ion-icon>
                   Inicio</ion-item>
               <ion-item>
-                  <ion-icon name="cog" color="success" slot="start"></ion-icon>
+                  <ion-icon name="cog" color="tertiary" slot="start"></ion-icon>
                   Configuración</ion-item>
                 <ion-item (click)="logout()">
-                  <ion-icon name="log-out" color="success" slot="start"></ion-icon>
+                  <ion-icon name="log-out" color="tertiary" slot="start"></ion-icon>
                   Salir</ion-item>
         
           </ion-list>

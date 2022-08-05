@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="success">
-      <ion-title>Dashboard</ion-title>
+  <ion-toolbar>
+      <ion-title>Productos disponibles</ion-title>
       <ion-buttons slot="start">
           <ion-menu-button ></ion-menu-button>
       </ion-buttons>
@@ -8,5 +8,25 @@
 </ion-header>
 
 <ion-content>
+  
+    <ion-list>
+      <ion-item *ngFor="let item of productos">
+        <ion-label>
+          <h2>{{item.nombre}}</h2>
+          <p>Disponibles: {{item.stock}} </p>
+        </ion-label>
+        <ion-label>
+          <h2></h2>
+          <p>Precio: ${{item.precio}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 
+    <ion-fab vertical="center" horizontal="end" edge slot="fixed">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+   
 </ion-content>

@@ -81,8 +81,8 @@ export class LoginPage implements OnInit {
     }
     
     this.authService.login(credentials)
-        .subscribe(resp=> {
-          console.log("Pesp",resp)
+        .subscribe((resp:any)=> {
+          this.storage.set('localId',resp.localId)
           this.errorMessage = '';
           this.navCtrl.navigateForward('/menu/home');
         }, (err) => {

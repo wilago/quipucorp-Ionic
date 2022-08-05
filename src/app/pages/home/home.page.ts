@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
+import { Storage } from '@ionic/storage';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+    productos;
+    localId;
+  constructor(private produtosService: ProductosService,
+              private storage: Storage
+            ) { }
 
-  ngOnInit() {
+ async ngOnInit() {
+
+    
+    this.localId= await this.storage.get('localId')
+    console.log(this.localId);
+   this.produtosService.getProducs(environment.urlFirebase ,this.localId)
+         .subscribe((resp)=>{
+
+          console.log(resp);
+          this.productos=resp;
+                  }
+         );
   }
 
 }

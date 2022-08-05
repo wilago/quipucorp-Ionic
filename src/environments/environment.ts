@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   urlRegister:'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBBQBQ_lV5D02xNOXVemtzopciQh8Jw0P8',
-  urlLogin:'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBBQBQ_lV5D02xNOXVemtzopciQh8Jw0P8'
- 
+  urlLogin:'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBBQBQ_lV5D02xNOXVemtzopciQh8Jw0P8',
+  urlFirebase:'https://quipucorp-8de3d-default-rtdb.firebaseio.com'
 };
 
 /*

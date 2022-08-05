@@ -34,7 +34,6 @@ export class AuthenticateService {
     };
     return this.http.post(environment.urlLogin, authData).pipe(
       map((resp) => {
-        console.log('paso pod el pipe');
         this.saveToken(resp['idToken']);
         return resp;
       })
@@ -45,7 +44,7 @@ export class AuthenticateService {
     this.userToken = idToken;
     this.storage.set('token', idToken);
     this.storage.set('isUserLoggedIn', true);
-    console.log('guardo el token');
+  
   }
 
   private async readToken() {
