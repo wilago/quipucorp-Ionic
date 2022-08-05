@@ -1,0 +1,7 @@
+{
+  "name": "quipuapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
