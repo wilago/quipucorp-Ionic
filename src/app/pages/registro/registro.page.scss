@@ -1,0 +1,98 @@
+
+*{
+    font: normal normal 22px Montserrat;
+}
+
+ion-toolbar{
+    display:flex;
+    align-items: center;
+    height: 60px; ;
+}
+
+ion-content {
+    --ion-background-color: #F5F6F8;
+    height: 100%;
+  }
+
+  ion-input {
+    margin: 0px 15px 15px 10px;
+    padding-left: 15px;
+    height: 59px;
+    width: 312px;
+    border: 1px solid #b2b2b2;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+  }
+
+  ion-button {
+    width: 250px;
+    height: 60px;
+    --background: #12a19a;
+    font: normal normal bold 15px Montserrat;
+    color: #ffffff;
+    padding-bottom: 16px;
+    margin-top: 30px;
+    --placeholder-color: #7a7a7a;
+   
+  }
+
+  ion-item {
+
+    --ion-background-color: #FFFFFF;
+
+  }
+
+
+  ion-select {
+    width: 300px;
+    height: 54px;
+    margin: 0px 0px 15px 10px;
+    padding-left:20px;
+    border: 1px solid #7A7A7A;
+    border-radius: 10px;
+    opacity: 1;
+
+  }
+  .circleUser{
+    padding: 3px;
+    margin-left: 25px;
+    text-align: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    width:30px;
+    height: 30px;
+    border-radius:10px;
+    font-size: 1666px;
+  }
+
+  .circleBack{
+    width:35px;
+    height: 35px;
+    border-radius:50%;
+    border: 1px solid #FFFFFF;
+    border-radius: 24px;
+    opacity: 1;
+    margin-left: 5px;
+
+  }
+
+  .titulo{
+    margin: 10px 0px 30px 0px;
+    font: normal normal bold 22px Montserrat;
+    text-align: center;
+
+  }
+
+  .txtInput {
+    padding-left: 30px;
+    font: normal normal bold 19px Montserrat;
+
+  }
+
+.box{
+
+    margin:0px 20px 0px 20px;
+    background-color: #FFFFFF;
+
+}

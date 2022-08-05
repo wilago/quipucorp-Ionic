@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    
+    <div > <ion-icon routerLink="/login"  class="circleBack" name="arrow-back" size="large"></ion-icon> <ion-icon  class="circleUser" color="tertiary" name="person-outline"></ion-icon> </div>
+    <ion-title>Tu cuenta personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo">Crea tu cuenta, es muy sencillo</div>
+  <form >
+<div class="box">
+    <div class="txtInput">Nombre</div>
+    <ion-item lines="none">
+        <ion-input ></ion-input>
+     </ion-item>
+
+     <div class="txtInput">Apellidos</div>
+     <ion-item lines="none">
+        <ion-input ></ion-input>
+     </ion-item>
+     <div class="txtInput">Selecciona tu genero</div>
+     <ion-item lines="none">
+      <ion-select placeholder="Despliega opciones">
+        <ion-select-option value="apples">Masculino</ion-select-option>
+        <ion-select-option value="oranges">Femenino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </div>
+
+  <div class="box">
+
+     <div class="txtInput">Correo electronico</div>
+    <ion-item lines="none">
+      
+        <ion-input ></ion-input>
+     </ion-item>
+     
+     <div class="txtInput">Contrasena</div>
+    <ion-item lines="none">
+        <ion-input   type="password" ></ion-input>
+    </ion-item>   
+
+  </div>
+  
+    <div class="button ion-text-center">
+    <ion-button  shape="round"  type="submit" >CREAR CUENTA<ion-icon name="arrow-forward" ></ion-icon></ion-button>
+  </div>
+</form>
+</ion-content>

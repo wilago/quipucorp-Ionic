@@ -1,0 +1,47 @@
+
+<ion-content >
+<div class="logo">
+  <img src="assets/images/Rectangle 606.png" alt="logo">
+</div>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <div class="txtInput"><img src="assets/images/Correo electrónico.svg" alt=""></div>
+    <ion-item lines="none">
+        <ion-input formControlName="email" placeholder="   Ingresa tu correo electrónico"></ion-input>
+     </ion-item>
+     <div class="validation-error" text-center style="color: red;">
+      <ng-container *ngFor="let validation of validation_messages.email">
+          <div *ngIf="
+  loginForm.get('email').hasError(validation.type) &&
+  (loginForm.get('email').dirty || loginForm.get('email').touched)
+  ">
+          <div class="ion-padding"> {{ validation.message }}</div>
+          </div>
+      </ng-container>
+  </div>
+    <div class="txtInput "><img src="assets/images/Clave.svg" alt=""></div>
+    <ion-item lines="none">
+        <ion-input  formControlName="password"  type="password" placeholder="   Ingresa tu contraseña"></ion-input>
+        <ion-icon name="eye"  color="tertiary" slot="end"></ion-icon>
+    </ion-item>   
+    <div class="validation-error" text-center style="color: red;">
+      <ng-container *ngFor="let validation of validation_messages.password">
+          <div *ngIf="
+  loginForm.get('password').hasError(validation.type) &&
+  (loginForm.get('password').dirty ||
+      loginForm.get('password').touched)
+  ">
+              <p class="ion-padding" > {{ validation.message }}</p>
+          </div>
+      </ng-container>
+  </div>
+  <div class="ion-text-center" >{{ errorMessage }}</div>
+    <div class="button ion-text-center">
+    <ion-button  shape="round"  type="submit" [disabled]="!loginForm.valid">ENTRA A TU CUENTA</ion-button>
+  </div>
+</form>
+<div class="txtnewUser">Eres Nuevo Usuario de Quipu</div>
+<div class="linkCreCuenta" routerLink="/registro">!Crea tu cuenta AQUI! Es gratis</div>
+</ion-content>
+<footer>
+  <img src="assets/images/Banner 1.png" alt="" height="158px">
+</footer>

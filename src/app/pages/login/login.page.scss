@@ -1,0 +1,64 @@
+ion-content {
+  --ion-background-color: #cbe6e1;
+  height: 100%;
+}
+
+.linkCreCuenta {
+  cursor: pointer;
+  text-align: center;
+  font-family: normal normal bold 22px Montserrat;
+  color: #12a19a;
+  opacity: 1;
+}
+
+.txtnewUser {
+  font-family: Montserrat, Regular;
+  text-align: center;
+  margin-bottom: 4px;
+  font-family: normal normal normal 22px Montserrat;
+  color: #404040;
+  opacity: 1;
+}
+
+.txtInput {
+  padding-left: 30px;
+}
+
+ion-input {
+  margin: 0px 15px 15px 10px;
+  padding-left: 15px;
+  height: 59px;
+  width: 312px;
+  border: 1px solid #b2b2b2;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+button {
+  text-align: center !important;
+  border-radius: 23px;
+  opacity: 1;
+}
+
+ion-button {
+  width: 250px;
+  height: 60px;
+  --background: #12a19a;
+  font: normal normal bold 19px Montserrat;
+  color: #ffffff;
+  padding-bottom: 16px;
+  --placeholder-color: #7a7a7a;
+}
+
+footer {
+  background-color: #cbe6e1;
+}
+
+.logo {
+  margin: 54px 0px 15px 0px;
+
+  text-align: center;
+}
+
+
