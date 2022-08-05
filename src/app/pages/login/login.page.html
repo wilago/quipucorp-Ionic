@@ -9,14 +9,10 @@
         <ion-input formControlName="email" placeholder="   Ingresa tu correo electrónico"></ion-input>
      </ion-item>
      <div class="validation-error" text-center style="color: red;">
-      <ng-container *ngFor="let validation of validation_messages.email">
-          <div *ngIf="
-  loginForm.get('email').hasError(validation.type) &&
-  (loginForm.get('email').dirty || loginForm.get('email').touched)
-  ">
-          <div class="ion-padding"> {{ validation.message }}</div>
-          </div>
-      </ng-container>
+  
+          <small *ngIf="emailNoValido">
+           No es un correo valido
+          </small>
   </div>
     <div class="txtInput "><img src="assets/images/Clave.svg" alt=""></div>
     <ion-item lines="none">
@@ -24,15 +20,10 @@
         <ion-icon name="eye"  color="tertiary" slot="end"></ion-icon>
     </ion-item>   
     <div class="validation-error" text-center style="color: red;">
-      <ng-container *ngFor="let validation of validation_messages.password">
-          <div *ngIf="
-  loginForm.get('password').hasError(validation.type) &&
-  (loginForm.get('password').dirty ||
-      loginForm.get('password').touched)
-  ">
-              <p class="ion-padding" > {{ validation.message }}</p>
-          </div>
-      </ng-container>
+ 
+          <small *ngIf="passNoValido">
+            Debe tener mas de 6 caracteres
+          </small>
   </div>
   <div class="ion-text-center" >{{ errorMessage }}</div>
     <div class="button ion-text-center">

@@ -44,6 +44,7 @@ export class AuthenticateService {
   private saveToken(idToken: string) {
     this.userToken = idToken;
     this.storage.set('token', idToken);
+    this.storage.set('isUserLoggedIn', true);
     console.log('guardo el token');
   }
 

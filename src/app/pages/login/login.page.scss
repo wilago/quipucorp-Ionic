@@ -3,6 +3,13 @@ ion-content {
   height: 100%;
 }
 
+small{
+  color: #12a19a;
+  margin:0px 0px 30px 30px;
+  font: normal normal  16px Montserrat;
+
+}
+
 .linkCreCuenta {
   cursor: pointer;
   text-align: center;
@@ -26,7 +33,6 @@ ion-content {
 
 ion-input {
   margin: 0px 15px 15px 10px;
-  padding-left: 15px;
   height: 59px;
   width: 312px;
   border: 1px solid #b2b2b2;

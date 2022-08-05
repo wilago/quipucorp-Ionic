@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -20,48 +20,73 @@ export class LoginPage implements OnInit {
   dato: any;
 
   loginForm: FormGroup;
-  validation_messages = {
-    email: [
-      { type: 'required', message: ' El email es requerido' },
-      { type: 'pattern', message: 'Este no es un email válido' },
-    ],
-    password: [
-      { type: 'required', message: ' El password es requerido' },
-      { type: 'minlength', message: 'Minimo 5 letras para el password' },
-    ],
-  };
+
   errorMessage: string = '';
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticateService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private  storage: Storage
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
-        '',
+        'wilago1979@gmail.com',
         Validators.compose([
           Validators.required,
           Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
         ])
       ),
       password: new FormControl(
-        '',
+        '12345678',
         Validators.compose([Validators.required, Validators.minLength(5)])
       ),
     });
   }
 
  
+  
+  get emailNoValido() {
+    return this.loginForm.get("email")?.invalid && this.loginForm.get("email")?.touched ;
+  }
 
-  async ngOnInit() {}
+
+  get passNoValido() {
+    return this.loginForm.get("password")?.invalid && this.loginForm.get("password")?.touched;
+  }
+
+  
+
+  async ngOnInit() {
+
+    let isUserLoggedIn = await this.storage.get('isUserLoggedIn');
+
+    if (isUserLoggedIn) {
+      this.navCtrl.navigateForward('/menu/home');
+    }
+
+
+  }
   loginUser(credentials) {
-    console.log(credentials)
+ 
+    if (this.loginForm.invalid) {
+      return Object.values(this.loginForm.controls).forEach((control) => {
+        if (control instanceof FormGroup) {
+          Object.values(control.controls).forEach((control) =>
+            control.markAsTouched()
+          );
+        } else {
+          control.markAsTouched();
+        }
+      });
+    }
     
     this.authService.login(credentials)
         .subscribe(resp=> {
-          console.log(resp)
+          console.log("Pesp",resp)
+          this.errorMessage = '';
+          this.navCtrl.navigateForward('/menu/home');
         }, (err) => {
-          
+          this.errorMessage =err.error.error.message;
           console.log(err.error.error.message)
 
         })
