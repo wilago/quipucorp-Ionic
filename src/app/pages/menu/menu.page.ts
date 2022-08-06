@@ -23,6 +23,8 @@ export class MenuPage implements OnInit {
   logout() {
     this.storage.set('isUserLoggedIn', false);
     this.storage.remove('isUserLoggedIn');
+    this.storage.remove('localId');
+    this.storage.remove('token');
     this.menu.close();
     this.navCtrl.navigateRoot('/login');
   }
