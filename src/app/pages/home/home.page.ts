@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
 import { Storage } from '@ionic/storage';
 import { environment } from 'src/environments/environment';
-
+import { Store } from '@ngrx/store';
+import { loadProducts } from 'src/app/state/actions/products.actions';
+import {
+  selectListProduct,
+  selectLoading,
+} from 'src/app/state/selectors/products.selectors';
 
 @Component({
   selector: 'app-home',
@@ -10,25 +15,20 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  productos;
+  localId;
+  loading;
+  constructor(
+    private produtosService: ProductosService,
+    private storage: Storage,
+    private store: Store<any>
+  ) {}
 
-    productos;
-    localId;
-  constructor(private produtosService: ProductosService,
-              private storage: Storage
-            ) { }
+  async ngOnInit() {
+    this.store.dispatch(loadProducts());
 
- async ngOnInit() {
-
-    
-    this.localId= await this.storage.get('localId')
-    console.log(this.localId);
-   this.produtosService.getProducs(environment.urlFirebase ,this.localId)
-         .subscribe((resp)=>{
-
-          console.log(resp);
-          this.productos=resp;
-                  }
-         );
+    this.store.select(selectListProduct).subscribe((resp) => {
+      this.productos = resp;
+    });
   }
-
 }

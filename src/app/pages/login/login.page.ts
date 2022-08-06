@@ -15,8 +15,6 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
-  
   dato: any;
 
   loginForm: FormGroup;
@@ -26,7 +24,7 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthenticateService,
     private navCtrl: NavController,
-    private  storage: Storage
+    private storage: Storage
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
@@ -43,31 +41,28 @@ export class LoginPage implements OnInit {
     });
   }
 
- 
-  
   get emailNoValido() {
-    return this.loginForm.get("email")?.invalid && this.loginForm.get("email")?.touched ;
+    return (
+      this.loginForm.get('email')?.invalid &&
+      this.loginForm.get('email')?.touched
+    );
   }
-
 
   get passNoValido() {
-    return this.loginForm.get("password")?.invalid && this.loginForm.get("password")?.touched;
+    return (
+      this.loginForm.get('password')?.invalid &&
+      this.loginForm.get('password')?.touched
+    );
   }
 
-  
-
   async ngOnInit() {
-
     let isUserLoggedIn = await this.storage.get('isUserLoggedIn');
 
     if (isUserLoggedIn) {
       this.navCtrl.navigateForward('/menu/home');
     }
-
-
   }
   loginUser(credentials) {
- 
     if (this.loginForm.invalid) {
       return Object.values(this.loginForm.controls).forEach((control) => {
         if (control instanceof FormGroup) {
@@ -79,17 +74,18 @@ export class LoginPage implements OnInit {
         }
       });
     }
-    
-    this.authService.login(credentials)
-        .subscribe((resp:any)=> {
-          this.storage.set('localId',resp.localId)
-          this.errorMessage = '';
-          this.navCtrl.navigateForward('/menu/home');
-        }, (err) => {
-          this.errorMessage =err.error.error.message;
-          console.log(err.error.error.message)
 
-        })
+    this.authService.login(credentials).subscribe(
+      (resp: any) => {
+        this.storage.set('localId', resp.localId);
+        this.errorMessage = '';
+        this.navCtrl.navigateForward('/menu/home');
+      },
+      (err) => {
+        this.errorMessage = err.error.error.message;
+        console.log(err.error.error.message);
+      }
+    );
 
     // this.authService
     //   .loginUser(credentials)
@@ -100,8 +96,5 @@ export class LoginPage implements OnInit {
     //   .catch((err) => {
     //     this.errorMessage = err;
     //   });
-
-
   }
-
 }

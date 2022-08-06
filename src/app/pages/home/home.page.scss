@@ -1,39 +1,36 @@
-*{
-
-    background-color: #F5F6F8;
-    color: #404040;
-    font: normal normal 21px Montserrat;
+* {
+  background-color: #f5f6f8;
+  color: #404040;
+  font: normal normal 21px Montserrat;
 }
 
 ion-content {
-
-    --ion-background-color: #F5F6F8;
-    height: 100%;
-    
-  }
-  
-
-ion-item{
-
-    background-color: #F5F6F8;
+  --ion-background-color: #f5f6f8;
+  height: 100%;
 }
 
-ion-label{
-
-    background-color: #F5F6F8;
+ion-item {
+  background-color: #f5f6f8;
 }
 
-ion-title{
-   
-    text-align: center;
+ion-label {
+  background-color: #f5f6f8;
 }
 
-h2{
-    font: normal normal bold 18px Montserrat;
-
+ion-title {
+  text-align: center;
 }
 
-p{
-    font: normal normal Medium 12px Montserrat;
-    color: #404040
+ion-icon {
+  background-color: #12a19a;
+  color: white;
+}
+
+h2 {
+  font: normal normal bold 18px Montserrat;
+}
+
+p {
+  font: normal normal Medium 12px Montserrat;
+  color: #404040;
 }

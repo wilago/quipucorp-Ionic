@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <div > <ion-icon routerLink="/menu/home"  class="circleBack" name="arrow-back" size="large"></ion-icon>  </div>
+    <ion-title>Creacion de producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <div class="titulo">Crea tu producto, es muy sencillo</div>
+  <form [formGroup]="producForm"  (ngSubmit)="save(producForm.value)">
+<div class="box">
+    <div class="txtInput">Nombre Producto</div>
+        <ion-item lines="none">
+            <ion-input formControlName="nombre" type="text"></ion-input> 
+        </ion-item>
+        <small *ngIf="nameNoValido" >
+          Debe ingresar min 4 letras
+        </small>
+
+    <div class="txtInput">Stock</div>
+        <ion-item lines="none">
+            <ion-input formControlName="stock" type="number"></ion-input>
+        </ion-item>
+        <small *ngIf="stockNoValido" >
+          Debe ingresar cantidad
+        </small>
+  </div>
+
+  <div class="box">
+     <div class="txtInput">Precio $</div>
+        <ion-item lines="none">
+            <ion-input formControlName="precio" type="number"></ion-input>
+        </ion-item>
+        <small *ngIf="precioNoValido" >
+          Debe ingresar el precio
+        </small>
+     
+     <div class="txtInput">Descripcion</div>
+        <ion-item lines="none">
+            <ion-textarea  rows="5"  formControlName="descripcion"   ></ion-textarea>
+        </ion-item>  
+        <small *ngIf="descripNoValido" >
+          Debe tener mas de 6 caracteres
+        </small>
+  </div>
+  
+    <div class="button ion-text-center">
+    <ion-button  shape="round"  type="submit" >CREAR PRODUCTO<ion-icon name="arrow-forward" ></ion-icon></ion-button>
+  </div>
+</form>
+</ion-content>

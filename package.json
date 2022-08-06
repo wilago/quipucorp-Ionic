@@ -26,6 +26,9 @@
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
     "@ionic/storage": "2.3.1",
+    "@ngrx/effects": "^14.0.2",
+    "@ngrx/store": "^14.0.2",
+    "@ngrx/store-devtools": "^14.0.2",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.4.24",
     "tslib": "^2.2.0",
@@ -62,7 +65,8 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "typescript": "~4.7.3"
+    "typescript": "~4.7.3",
+    "@ngrx/eslint-plugin": "^14.0.2"
   },
   "description": "An Ionic project"
 }
