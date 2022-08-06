@@ -64,5 +64,11 @@ Nos muestra el error al trata de registra un usuario ya creado.
 ![image](https://user-images.githubusercontent.com/27816405/183231091-e5551049-4e2b-4036-a066-d44fd598bc8b.png)
 
 
+Por ultimo se confirma que el codigo realizado funcione correctamente y se pueda el APk, para ello se compila en Andriod estudio y se emula su funconamiento como se muestra en las siguentes imagenes.
+
+![image](https://user-images.githubusercontent.com/27816405/183233236-82930bbc-2d76-4836-97d5-2e5815caf0cb.png)
+
+
+![image](https://user-images.githubusercontent.com/27816405/183233529-1724a091-f9e3-4f47-b821-f39e0b438dc1.png)
 
 
