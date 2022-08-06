@@ -8,7 +8,7 @@
 De la misma forma de activan los permisos para la auntenticacion con Usuario y contraesena.
 ![image](https://user-images.githubusercontent.com/27816405/183230413-270f9721-e2d0-4770-9cb4-c16ae88e0380.png)
 
-Luego se crean los tres modulos de login, registro, home, menu y producto como se muestra en las siguentes imagenes.
+Luego se crean los modulos de login, registro, home, menu y producto como se muestra en las siguentes imagenes.
 
 **Login:
 
