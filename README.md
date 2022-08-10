@@ -52,7 +52,7 @@ La siguente figura muestra el uso del recurso Ngrx
 ![image](https://user-images.githubusercontent.com/27816405/183230723-73567556-8ed5-4e8e-81ee-605f0d02e679.png)
 
 
-**Validaciones que no se lograron terminar.
+**Validaciones de login.
 
 **Formulario Login**
 Nos muestra el error cuando el login o contrasena es incorresta
